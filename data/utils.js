@@ -1,16 +1,37 @@
-const chalk             = require("chalk");
-const {textSync}            = require("figlet")
-const success        = require("log-symbols").success;
+const { readFileSync, existsSync } = require('fs-extra');
+const { showInfo, showDanger } = require('./utils/messages');
 
-function showSuccess(arg){
-    console.log(
-        chalk.green.bold(
-        `${success} ${arg}`
-        )
-    );
+const insertIntoFile = (path, position, data, fromEnd = false) => {
+    let result = readFileSync(path).toString().trim().split("\n");
+    if(fromEnd){
+        result = result.slice(0, -position);
+        result.push(data);
+    }else{
+        result.splice(position, 0, data)
+    }
+    let joined = result.join("\n");
+    return joined;
 }
 
+const onRootOfProject = () => {
+    if (!existsSync('./package.json') || !existsSync('./src')) {
+        showDanger("You need to be on root of your React project");
+        return false;
+    } else return true
+}
+
+const checkCapitalizedLetter = name => {
+
+    if (name[0] !== name[0].toUpperCase())
+        showInfo(`Info: Components name must be capitalized. Now fixed!`)
+
+    let cName = name.split("/").pop();
+    cName = cName[0].toUpperCase() + cName.slice(1);
+    return cName;
+}
 
 module.exports = {
-    showSuccess
+    insertIntoFile,
+    checkCapitalizedLetter,
+    onRootOfProject
 }

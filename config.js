@@ -1,7 +1,7 @@
-config = {
-  version: '1.0.3'
-}
 
+const config = {
+  version: '1.0.7',
+}
 module.exports = {
   config
 }
