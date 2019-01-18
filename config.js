@@ -1,6 +1,6 @@
 
 const config = {
-  version: '1.1.1',
+  version: '1.1.2',
 }
 module.exports = {
   config

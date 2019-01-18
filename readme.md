@@ -6,7 +6,7 @@ As React ecosystem does not have a CLI for creating components (like Angular), c
 
 
 ### Windows users
-_**Warning:** Currently this package is using unix subcommands and it will not work on Windows, unless you are using git bash or Ubuntu subsystem. In the future this will be improved and it will be avaiblable for windows terminal as well._
+_**Warning:** Currently this package is using unix subcommands to remove styles that already exists. This should not cause any errors but it will not delete the style files of a component when another once is choosed. This will be fixed in the future, but for now I recomment using git bash. _
 
 ### Features
 
@@ -44,6 +44,10 @@ $ react-add rfc
 ```
 
 # Changelog
+
+## [1.1.2] - 2018-18-01
+### Added
+- Warning in readme.md for Windows users
 
 ## [1.1.0] - 2018-17-01
 ### Added

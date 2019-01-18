@@ -13,7 +13,7 @@ module.exports = () => {
     .then(answers => {
       let name = checkCapitalizedLetter(answers.rcc);
       let path = `./src/components/${name}/${name}.jsx`;
-
+      console.log(process.env.TERM);
 
       outputFile(path, defaultComponent(name))
 
