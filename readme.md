@@ -2,7 +2,7 @@
 ## A work in progress!
 
 Motivation:
-As React ecosystem does not have a CLI for creating components (like Angular), creating and configuring manual components might take more time than expected. This package aims for simplicty and to use familiar terms to configure a component and get started quickly.
+As React ecosystem does not have a CLI for creating components (like Angular), creating and configuring manual components might take more time than expected. This package aims for simplicty and uses familiar terms to configure a component and get started quickly.
 
   - Class component 
   - Function component
@@ -36,6 +36,14 @@ For function components:
 ```sh
 $ react-add rfc
 ```
+
+# Changelog
+
+## [1.1.0] - 2018-17-01
+### Added
+- If the user selected redux or/and scss, React-add will search inside package.json and it will install the dependencies needed
+- Changing an existing component style, will remove and replace style file with the choosen one.
+
 
 License
 ----
