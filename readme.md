@@ -1,16 +1,16 @@
 # React add
-## A work in progress!
+## 👷 A work in progress !
 
-Motivation:
+🔥 Motivation: 
 As React ecosystem does not have a CLI for creating components (like Angular), creating and configuring manual components might take more time than expected. This package aims for simplicty and uses familiar terms to configure a component and get started quickly.
 
-### Features
+### Features 🚀
 
-  - Class component 
-  - Function component
-  - Redux addition to class components
-  - LESS, SCSS, CSS choose for either of class or function components
-  - Stores components into a json file and can be reused by other person
+  - ✔️ Class component 
+  - ✔️ Function component
+  - ✔️ Redux addition to class components
+  - ✔️ LESS, SCSS, CSS choose for either of class or function components
+  - ✔️ Stores components into a json file and can be reused by other person
 
 In next releases:
   - Add react router (import, and withRouter hoc)
@@ -52,6 +52,18 @@ $ react-add install
 ```
 
 # Changelog
+
+## [1.1.5] - 2018-19-01
+### Modified
+- user can now select a global css style that will be used everytime it creates a component
+### Deleted
+- user can no longer select style everytime a component it's added
+
+
+## [1.1.3] - 2018-19-01
+### Added
+- `react-add uninstall` functionality added
+- uninstall can be used to delete components from reactadd json file
 
 ## [1.1.3] - 2018-19-01
 ### Added

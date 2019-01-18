@@ -9,6 +9,7 @@ const { exists } = require('fs-extra');
 
 const init = require('./data/commands/init');
 const install = require('./data/commands/install');
+const uninstall = require('./data/commands/uninstall');
 
 program.version(config.version)
 program.on('--help', () => {
@@ -26,7 +27,9 @@ if (!onRootOfProject())
 
 exists('./reactadd.json', isInit => {
 
-    if (isInit)
+
+    if (isInit) {
+        let reactInfo = require('./reactadd.json');
         switch (args[0]) {
             case 'rcc': generateRcc();
                 break;
@@ -36,8 +39,11 @@ exists('./reactadd.json', isInit => {
                 break;
             case 'install': install();
                 break;
+            case 'uninstall': uninstall(reactInfo);
+                break;
             default: showInfo(`Please use a valid command. Use --help for more info.`);
         }
+    }
 
     else
         switch (args[0]) {

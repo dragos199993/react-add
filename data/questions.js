@@ -1,11 +1,12 @@
 const inquierer = require('inquirer');
 
+
 const rccQuestions = [
   {
     type: 'input',
     name: 'rcc',
     message: 'Name of your component',
-    validate: function(text) { // Validations here
+    validate: function (text) { // Validations here
       return true;
     }
   },
@@ -13,18 +14,6 @@ const rccQuestions = [
     type: 'confirm',
     name: 'redux',
     message: 'Add redux connect to component?'
-  },
-  {
-    type: 'list',
-    name: 'style',
-    message: 'Select a style for the component',
-    choices: [
-      'NONE',
-      new inquierer.Separator(),
-      'scss',
-      'less',
-      'css'
-    ]
   }
 ];
 
@@ -33,7 +22,7 @@ const rfcQuestions = [
     type: 'input',
     name: 'rfc',
     message: 'Name of your component',
-    validate: function(text) { // Validations here
+    validate: function (text) { // Validations here
       return true;
     }
   }
@@ -54,6 +43,18 @@ const initQuestions = [
     type: 'input',
     name: 'author',
     message: 'Author name: '
+  },
+  {
+    type: 'list',
+    name: 'style',
+    message: 'Select a global style. (if none selected you will choose one everytime you create a component)',
+    choices: [
+      'NONE',
+      new inquierer.Separator(),
+      'scss',
+      'less',
+      'css'
+    ]
   }
 ]
 

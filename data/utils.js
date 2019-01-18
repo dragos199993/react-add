@@ -39,7 +39,18 @@ const componentAlreadyExists = (reactInfo, answers) => {
     })
 }
 
+const reactInfo = () => {
+    try {
+        const reactInfo = require('../reactAdd.json');
+        return reactInfo;
+    }
+    catch (e) {
+        return null;
+    }
+}
+
 module.exports = {
+    reactInfo,
     insertIntoFile,
     checkCapitalizedLetter,
     onRootOfProject,

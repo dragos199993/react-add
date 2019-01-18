@@ -16,6 +16,7 @@ module.exports = () => {
         author: answers.author,
         components: []
       }
+      if(answers.style !== 'NONE') reactInfo.globalStyle = answers.style
   
       outputFile('./reactadd.json', JSON.stringify(reactInfo, null, 4));
     });
