@@ -4,6 +4,12 @@
 Motivation:
 As React ecosystem does not have a CLI for creating components (like Angular), creating and configuring manual components might take more time than expected. This package aims for simplicty and uses familiar terms to configure a component and get started quickly.
 
+
+### Windows users
+_**Warning:** Currently this package is using unix subcommands and it will not work on Windows, unless you are using git bash or Ubuntu subsystem. In the future this will be improved and it will be avaiblable for windows terminal as well._
+
+### Features
+
   - Class component 
   - Function component
   - Redux addition to class components
