@@ -3,10 +3,10 @@ const { showInfo, showDanger } = require('./utils/messages');
 
 const insertIntoFile = (path, position, data, fromEnd = false) => {
     let result = readFileSync(path).toString().trim().split("\n");
-    if(fromEnd){
+    if (fromEnd) {
         result = result.slice(0, -position);
         result.push(data);
-    }else{
+    } else {
         result.splice(position, 0, data)
     }
     let joined = result.join("\n");
@@ -30,8 +30,18 @@ const checkCapitalizedLetter = name => {
     return cName;
 }
 
+const componentAlreadyExists = (reactInfo, answers) => {
+    reactInfo.components.map(component => {
+        if (component.rcc === answers.rcc) {
+            showDanger(`Component with name of '${answers.rcc}' already exists!`)
+            process.exit(0);
+        }
+    })
+}
+
 module.exports = {
     insertIntoFile,
     checkCapitalizedLetter,
-    onRootOfProject
+    onRootOfProject,
+    componentAlreadyExists
 }

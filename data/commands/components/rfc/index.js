@@ -1,8 +1,8 @@
 const inquierer = require('inquirer');
 const { outputFile } = require('fs-extra');
-const { showSuccess } = require('../data/utils/messages');
-const { defaultFunctionComponent } = require('../factory/function/default');
-const { rfcQuestions } = require('../data/questions');
+const { showSuccess } = require('../../../utils/messages');
+const { defaultFunctionComponent } = require('../../../../factory/function/default');
+const { rfcQuestions } = require('../../../questions');
 
 module.exports = () => {
   inquierer
@@ -11,5 +11,4 @@ module.exports = () => {
       outputFile(`./src/components/${answers.rfc}.jsx`, defaultFunctionComponent(answers.rfc))
       showSuccess(`Done! ${answers.rfc} component added.`)
     });
-
 }

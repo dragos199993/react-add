@@ -39,7 +39,26 @@ const rfcQuestions = [
   }
 ];
 
+const initQuestions = [
+  {
+    type: 'input',
+    name: 'name',
+    message: 'Please enter project name: '
+  },
+  {
+    type: 'input',
+    name: 'description',
+    message: 'Short description of project: '
+  },
+  {
+    type: 'input',
+    name: 'author',
+    message: 'Author name: '
+  }
+]
+
 module.exports = {
   rccQuestions,
-  rfcQuestions
+  rfcQuestions,
+  initQuestions
 }
